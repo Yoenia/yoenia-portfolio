@@ -7,7 +7,42 @@
     return div.innerHTML;
   }
 
+  function initials(name) {
+    return name
+      .split(/\s+/)
+      .filter(Boolean)
+      .slice(0, 2)
+      .map((p) => p[0])
+      .join("")
+      .toUpperCase();
+  }
+
+  function renderAvatar(profile) {
+    const avatar = $(".avatar");
+    if (!avatar) return;
+    avatar.textContent = "";
+    avatar.classList.remove("avatar--photo");
+    if (profile.photoUrl) {
+      const img = document.createElement("img");
+      const base = window.location.href.replace(/[^/]*$/, "");
+      img.src = profile.photoUrl.startsWith("http")
+        ? profile.photoUrl
+        : new URL(profile.photoUrl, base).href;
+      img.alt = profile.name;
+      img.className = "avatar-img";
+      img.addEventListener("error", () => {
+        avatar.classList.remove("avatar--photo");
+        avatar.textContent = initials(profile.name);
+      });
+      avatar.classList.add("avatar--photo");
+      avatar.appendChild(img);
+    } else {
+      avatar.textContent = initials(profile.name);
+    }
+  }
+
   function renderProfile(profile) {
+    renderAvatar(profile);
     $("#hero-eyebrow").textContent = profile.title;
     $("#hero-title").textContent = profile.name;
     $("#hero-tagline").textContent = profile.tagline;
