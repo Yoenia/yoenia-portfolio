@@ -102,17 +102,25 @@
     `;
   }
 
+  let contactEmail = "yoenia.malmebo@gmail.com";
+
   async function loadProfile() {
-    try {
-      const res = await fetch("/api/profile");
-      if (!res.ok) throw new Error("API");
-      const profile = await res.json();
-      renderProfile(profile);
-    } catch {
-      $("#hero-eyebrow").textContent = "Kunde inte ladda profil";
-      $("#hero-summary").textContent =
-        "Starta Spring Boot-servern (mvn spring-boot:run) för att visa innehåll från API:t.";
+    const sources = ["api/profile", "data/profile.json"];
+    for (const source of sources) {
+      try {
+        const res = await fetch(source);
+        if (!res.ok) continue;
+        const profile = await res.json();
+        if (!profile || !profile.name) continue;
+        if (profile.email) contactEmail = profile.email;
+        renderProfile(profile);
+        return;
+      } catch {
+        // Nästa källa: API lokalt, JSON på GitHub Pages.
+      }
     }
+    $("#hero-eyebrow").textContent = "Kunde inte ladda profil";
+    $("#hero-summary").textContent = "Profilen kunde inte hämtas just nu.";
   }
 
   function setupNav() {
@@ -145,24 +153,34 @@
       };
 
       try {
-        const res = await fetch("/api/contact", {
+        const res = await fetch("api/contact", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(data),
         });
-        const body = await res.json().catch(() => ({}));
-        if (!res.ok) {
-          status.textContent = body.message || "Kontrollera formuläret och försök igen.";
-          status.classList.add("err");
+        if (res.status !== 404) {
+          const body = await res.json().catch(() => ({}));
+          if (!res.ok) {
+            status.textContent = body.message || "Kontrollera formuläret och försök igen.";
+            status.classList.add("err");
+            return;
+          }
+          status.textContent = body.message || "Meddelande skickat!";
+          status.classList.add("ok");
+          form.reset();
           return;
         }
-        status.textContent = body.message || "Meddelande skickat!";
-        status.classList.add("ok");
-        form.reset();
       } catch {
-        status.textContent = "Nätverksfel – försök igen senare.";
-        status.classList.add("err");
+        // Ingen server: öppna e-post i stället.
       }
+
+      const subject = encodeURIComponent("Meddelande via portföljen");
+      const body = encodeURIComponent(
+        `Namn: ${data.name}\nE-post: ${data.email}\n\n${data.message}`
+      );
+      window.location.href = `mailto:${contactEmail}?subject=${subject}&body=${body}`;
+      status.textContent = "Din e-post öppnas så att meddelandet kan skickas.";
+      status.classList.add("ok");
     });
   }
 

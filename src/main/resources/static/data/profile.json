@@ -1,0 +1,187 @@
+{
+  "name": "Yoenia Malmebo",
+  "title": "Verksamhetsledare / Samordnare inom social omsorg",
+  "tagline": "Struktur, kvalitet och människan i centrum",
+  "summary": "Engagerad och lösningsorienterad samordnare med flerårig erfarenhet inom LSS,\nsocial omsorg och omvårdnad. Van vid bemanning, kvalitetssäkring, dokumentation\noch operativ samordning i verksamheter med höga krav på struktur, kontinuitet\noch professionalism. Har erfarenhet av arbetsledning och utvecklingsarbete —\nbland annat verktyget Rutinflödet och ny aktivitetsplanering som implementerats\ni flera verksamheter. Utvecklar även webb med Java, Spring Boot, HTML, CSS och JavaScript.",
+  "location": "Bromma, Stockholm",
+  "email": "yoenia.malmebo@gmail.com",
+  "phone": "070-713 36 37",
+  "linkedInUrl": "https://www.linkedin.com/in/yoenia-malmebo-806092274/",
+  "siteUrl": "https://yoenia.github.io/yoenia-portfolio/",
+  "strengths": [
+    "Engagerad",
+    "Lösningsorienterad",
+    "Strukturerad",
+    "Organisatorisk förmåga",
+    "Flexibel",
+    "Lagspelare",
+    "Problemlösning",
+    "Snabblärd"
+  ],
+  "skillGroups": [
+    {
+      "category": "Ledning & samordning",
+      "items": [
+        "Arbetsledning",
+        "Bemanning",
+        "Kvalitetssäkring",
+        "Rutin- och processutveckling",
+        "Operativ samordning",
+        "Kontakt med externa parter"
+      ]
+    },
+    {
+      "category": "Vård, omsorg & LSS",
+      "items": [
+        "Personcentrerad omsorg",
+        "Funktionsnedsättning & psykiatri",
+        "Medicinhantering",
+        "Dokumentation Parasol",
+        "Salutogent förhållningssätt",
+        "Kultur- och fritidsarbete"
+      ]
+    },
+    {
+      "category": "Administration & system",
+      "items": [
+        "Fakturering",
+        "Inköp",
+        "Agresso",
+        "LISA",
+        "Medvind",
+        "Visma"
+      ]
+    },
+    {
+      "category": "Webb & utveckling",
+      "items": [
+        "Java",
+        "Spring Boot",
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "REST API",
+        "Git"
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "period": "Apr 2025 – Jun 2025",
+      "role": "Tf. gruppledare – fyra LSS-verksamheter",
+      "organization": "Stockholms stad",
+      "location": "Bromma",
+      "highlights": [
+        "Ansvar för bemanning, kvalitet och struktur.",
+        "Ledde arbetsgruppen utifrån salutogent synsätt.",
+        "Säkerställde efterlevnad av lagar, riktlinjer och rutiner.",
+        "Implementerade nya arbetsrutiner och processer.",
+        "Utvecklade strategier för effektivitet och produktivitet.",
+        "Kontaktperson mot externa samarbetspartners."
+      ]
+    },
+    {
+      "period": "Feb 2017 – pågående",
+      "role": "Boendestödjare",
+      "organization": "Gruppbostad Annedal, Stockholms stad",
+      "location": "Bromma",
+      "highlights": [
+        "Ansvar för fakturering, inköp, bemanning, kvalitet och dokumentation.",
+        "Skapade verktyget Rutinflödet och ny aktivitetsplanering — implementerat i flera verksamheter.",
+        "Dokumentations- och kvalitetsombud; Parasol.",
+        "Stödperson, kultur- och fritidsombud; bemanning i Medvind och Visma."
+      ]
+    },
+    {
+      "period": "Apr 2014 – Dec 2016",
+      "role": "Vårdare",
+      "organization": "Gruppbostad Backlura, Nytida",
+      "location": "Hässelby",
+      "highlights": [
+        "Omvårdnad för personer med MS och förvärvad hjärnskada.",
+        "Anpassade stödinsatser efter brukarens behov.",
+        "Medicinering enligt rutiner."
+      ]
+    },
+    {
+      "period": "Maj 2006 – Jul 2013",
+      "role": "Personlig assistent & hemtjänst",
+      "organization": "Bonitas AB",
+      "location": "Stockholm",
+      "highlights": [
+        "Stöd i dagliga aktiviteter för trygg vardag.",
+        "Arbete med äldre och personer med funktionsnedsättning och psykiatriska diagnoser."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "period": "Aug 2024 – Maj 2026",
+      "title": "Verksamhetsledare / Samordnare inom social omsorg",
+      "institution": "Yrkeshögskola",
+      "location": "Upplands-Bro",
+      "details": [
+        "Pågående högskoleutbildning med fokus på ledning och samordning."
+      ]
+    },
+    {
+      "period": "Apr 2025 – Maj 2025",
+      "title": "Gruppledarutbildning: Att leda utan att vara chef",
+      "institution": "Intern utbildning",
+      "location": "Bromma",
+      "details": []
+    },
+    {
+      "period": "Aug 2016 – Dec 2019",
+      "title": "Vård- och omsorgsprogrammet – hälso- och sjukvård",
+      "institution": "KUI",
+      "location": "Fridhemsplan, Stockholm",
+      "details": [
+        "Personcentrerad vård, etik, pedagogiskt ledarskap, rekrytering, psykiatri, palliativ vård.",
+        "Två LIA-perioder i Sundbybergs stad."
+      ]
+    },
+    {
+      "period": "2018 – 2019",
+      "title": "Neuropsykiatriska och intellektuella funktionsnedsättningar",
+      "institution": "KIND – Karolinska Institutet",
+      "location": "Stockholm",
+      "details": []
+    },
+    {
+      "period": "2021",
+      "title": "Specialpedagogik 2",
+      "institution": "KUI",
+      "location": "",
+      "details": []
+    },
+    {
+      "period": "Apr 2024 – Maj 2024",
+      "title": "Psykologi 1",
+      "institution": "CUBUS",
+      "location": "Fridhemsplan",
+      "details": []
+    }
+  ],
+  "languages": [
+    { "language": "Svenska", "level": "Flytande (C2)" },
+    { "language": "Spanska", "level": "Flytande (C2)" },
+    { "language": "Engelska", "level": "Medelnivå (B1)" }
+  ],
+  "projects": [
+    {
+      "name": "LSS & självbestämmande",
+      "description": "Examensarbete: webbapp med enkät och visualisering av faktorer som påverkar självbestämmande i gruppbostad enligt LSS. Byggd med Spring Boot, H2, HTML, CSS och JavaScript.",
+      "tech": ["Java", "Spring Boot", "JavaScript", "HTML", "CSS", "REST"],
+      "linkLabel": "Läs mer",
+      "linkUrl": "#projekt-lss"
+    },
+    {
+      "name": "yoenia.se",
+      "description": "Denna portfölj: responsiv sajt med profil-data från Spring Boot REST API och kontaktformulär med server-side validering.",
+      "tech": ["Java", "Spring Boot", "JavaScript", "HTML", "CSS"],
+      "linkLabel": "",
+      "linkUrl": ""
+    }
+  ]
+}
