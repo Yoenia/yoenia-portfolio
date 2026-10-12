@@ -2,7 +2,7 @@
   "name": "Yoenia Malmebo",
   "title": "Verksamhetsledare / Samordnare inom social omsorg",
   "tagline": "Struktur, kvalitet och människan i centrum",
-  "summary": "Engagerad och lösningsorienterad samordnare med flerårig erfarenhet inom LSS,\nsocial omsorg och omvårdnad. Van vid bemanning, kvalitetssäkring, dokumentation\noch operativ samordning i verksamheter med höga krav på struktur, kontinuitet\noch professionalism. Har erfarenhet av arbetsledning och utvecklingsarbete —\nbland annat verktyget Rutinflödet och ny aktivitetsplanering som implementerats\ni flera verksamheter. Utvecklar även webb med Java, Spring Boot, HTML, CSS och JavaScript.",
+  "summary": "Engagerad och lösningsorienterad samordnare med flerårig erfarenhet inom LSS,\nsocial omsorg och omvårdnad. Van vid bemanning, kvalitetssäkring, dokumentation\noch operativ samordning i verksamheter med höga krav på struktur, kontinuitet\noch professionalism. Har erfarenhet av arbetsledning och utvecklingsarbete —\nbland annat verktyget Rutinflödet och ny aktivitetsplanering som implementerats\ni flera verksamheter.",
   "location": "Bromma, Stockholm",
   "email": "yoenia.malmebo@gmail.com",
   "linkedInUrl": "https://www.linkedin.com/in/yoenia-malmebo-806092274/",
@@ -49,18 +49,6 @@
         "LISA",
         "Medvind",
         "Visma"
-      ]
-    },
-    {
-      "category": "Webb & utveckling",
-      "items": [
-        "Java",
-        "Spring Boot",
-        "HTML5",
-        "CSS3",
-        "JavaScript",
-        "REST API",
-        "Git"
       ]
     }
   ],
@@ -170,17 +158,10 @@
   "projects": [
     {
       "name": "LSS & självbestämmande",
-      "description": "Examensarbete: webbapp med enkät och visualisering av faktorer som påverkar självbestämmande i gruppbostad enligt LSS. Byggd med Spring Boot, H2, HTML, CSS och JavaScript.",
-      "tech": ["Java", "Spring Boot", "JavaScript", "HTML", "CSS", "REST"],
-      "linkLabel": "Läs mer",
-      "linkUrl": "#projekt-lss"
-    },
-    {
-      "name": "yoenia.se",
-      "description": "Denna portfölj: responsiv sajt med profil och kontaktformulär som skickar mejl.",
-      "tech": ["Java", "Spring Boot", "JavaScript", "HTML", "CSS"],
-      "linkLabel": "",
-      "linkUrl": ""
+      "description": "Examensarbete om faktorer som påverkar i vilken utsträckning personer med funktionsnedsättning i gruppbostad enligt LSS får sin självbestämmande respekterad av personal. En anonym enkät kartlägger bland annat tid, rutiner, attityder, kommunikation och delaktighet.",
+      "tech": ["LSS", "Gruppbostad", "Självbestämmande", "Enkät"],
+      "linkLabel": "Läs om projektet",
+      "linkUrl": "examensarbete.html"
     }
   ]
 }

@@ -1,6 +1,6 @@
 # yoenia.se – personlig portfölj
 
-Portfölj för **Yoenia Malmebo**: verksamhetsledare/samordnare inom social omsorg, med projekt i **Java**, **Spring Boot**, **HTML**, **CSS** och **JavaScript**.
+Portfölj för **Yoenia Malmebo**: verksamhetsledare/samordnare inom social omsorg. Examensarbetet handlar om självbestämmande i gruppbostad enligt LSS.
 
 ## Publik länk
 
