@@ -4,6 +4,7 @@ import java.util.List;
 
 public record ProfileDto(
         String name,
+        String photoUrl,
         String title,
         String tagline,
         String summary,
