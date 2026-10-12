@@ -9,7 +9,6 @@ public record ProfileDto(
         String summary,
         String location,
         String email,
-        String phone,
         String linkedInUrl,
         String siteUrl,
         List<String> strengths,

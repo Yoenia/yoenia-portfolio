@@ -5,7 +5,6 @@
   "summary": "Engagerad och lösningsorienterad samordnare med flerårig erfarenhet inom LSS,\nsocial omsorg och omvårdnad. Van vid bemanning, kvalitetssäkring, dokumentation\noch operativ samordning i verksamheter med höga krav på struktur, kontinuitet\noch professionalism. Har erfarenhet av arbetsledning och utvecklingsarbete —\nbland annat verktyget Rutinflödet och ny aktivitetsplanering som implementerats\ni flera verksamheter. Utvecklar även webb med Java, Spring Boot, HTML, CSS och JavaScript.",
   "location": "Bromma, Stockholm",
   "email": "yoenia.malmebo@gmail.com",
-  "phone": "070-713 36 37",
   "linkedInUrl": "https://www.linkedin.com/in/yoenia-malmebo-806092274/",
   "siteUrl": "https://yoenia.github.io/yoenia-portfolio/",
   "strengths": [
@@ -178,7 +177,7 @@
     },
     {
       "name": "yoenia.se",
-      "description": "Denna portfölj: responsiv sajt med profil-data från Spring Boot REST API och kontaktformulär med server-side validering.",
+      "description": "Denna portfölj: responsiv sajt med profil och kontaktformulär som skickar mejl.",
       "tech": ["Java", "Spring Boot", "JavaScript", "HTML", "CSS"],
       "linkLabel": "",
       "linkUrl": ""

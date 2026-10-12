@@ -21,9 +21,9 @@
     facts.innerHTML = [
       profile.location,
       profile.email,
-      profile.phone,
       ...profile.languages.map((l) => `${l.language}: ${l.level}`),
     ]
+      .filter(Boolean)
       .map((line) => `<li>${escapeHtml(line)}</li>`)
       .join("");
 
@@ -97,12 +97,9 @@
       <p><strong>${escapeHtml(profile.name)}</strong></p>
       <p>${escapeHtml(profile.location)}</p>
       <p><a href="mailto:${escapeHtml(profile.email)}">${escapeHtml(profile.email)}</a></p>
-      <p><a href="tel:${escapeHtml(profile.phone.replace(/\s/g, ""))}">${escapeHtml(profile.phone)}</a></p>
       <p><a href="${escapeHtml(profile.linkedInUrl)}" target="_blank" rel="noopener noreferrer">LinkedIn-profil</a></p>
     `;
   }
-
-  let contactEmail = "yoenia.malmebo@gmail.com";
 
   async function loadProfile() {
     const sources = ["api/profile", "data/profile.json"];
@@ -112,7 +109,6 @@
         if (!res.ok) continue;
         const profile = await res.json();
         if (!profile || !profile.name) continue;
-        if (profile.email) contactEmail = profile.email;
         renderProfile(profile);
         return;
       } catch {
@@ -141,46 +137,62 @@
     const status = $("#form-status");
     if (!form) return;
 
+    const button = form.querySelector("button[type=submit]");
+
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
       status.textContent = "";
       status.className = "form-status";
 
-      const data = {
-        name: form.name.value.trim(),
-        email: form.email.value.trim(),
-        message: form.message.value.trim(),
-      };
-
-      try {
-        const res = await fetch("api/contact", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(data),
-        });
-        if (res.status !== 404) {
-          const body = await res.json().catch(() => ({}));
-          if (!res.ok) {
-            status.textContent = body.message || "Kontrollera formuläret och försök igen.";
-            status.classList.add("err");
-            return;
-          }
-          status.textContent = body.message || "Meddelande skickat!";
-          status.classList.add("ok");
-          form.reset();
-          return;
-        }
-      } catch {
-        // Ingen server: öppna e-post i stället.
+      const name = form.name.value.trim();
+      const email = form.email.value.trim();
+      const message = form.message.value.trim();
+      if (!name || !email || message.length < 10) {
+        status.textContent = "Fyll i namn, e-post och ett meddelande på minst 10 tecken.";
+        status.classList.add("err");
+        return;
       }
 
-      const subject = encodeURIComponent("Meddelande via portföljen");
-      const body = encodeURIComponent(
-        `Namn: ${data.name}\nE-post: ${data.email}\n\n${data.message}`
-      );
-      window.location.href = `mailto:${contactEmail}?subject=${subject}&body=${body}`;
-      status.textContent = "Din e-post öppnas så att meddelandet kan skickas.";
-      status.classList.add("ok");
+      button.disabled = true;
+      try {
+        const res = await fetch("https://formsubmit.co/ajax/yoenia.malmebo@gmail.com", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            name,
+            email,
+            message,
+            _subject: "Meddelande från portföljen",
+            _replyto: email,
+            _template: "table",
+            _captcha: "false",
+          }),
+        });
+        const body = await res.json().catch(() => ({}));
+        const note = String(body.message || "");
+        if (!res.ok) {
+          status.textContent = "Kunde inte skicka mejlet. Försök igen om en stund.";
+          status.classList.add("err");
+          return;
+        }
+        if (/activat|confirm/i.test(note)) {
+          status.textContent =
+            "Nästan klart. Öppna inkorgen för yoenia.malmebo@gmail.com och bekräfta formuläret en gång. Sedan kommer meddelanden fram.";
+          status.classList.add("err");
+          return;
+        }
+        status.textContent = "Tack! Mejlet är skickat.";
+        status.classList.add("ok");
+        form.reset();
+      } catch {
+        status.textContent = "Kunde inte skicka mejlet. Försök igen om en stund.";
+        status.classList.add("err");
+      } finally {
+        button.disabled = false;
+      }
     });
   }
 
