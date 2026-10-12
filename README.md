@@ -48,6 +48,18 @@ Skriptet letar efter Java/Maven och visar `winget`-kommandon om något saknas. M
 
 Öppna [http://localhost:8080](http://localhost:8080)
 
+## Deploy på Render (Spring Boot)
+
+Repot innehåller [`render.yaml`](render.yaml) och [`Dockerfile`](Dockerfile) för [Render Blueprint](https://render.com/docs/infrastructure-as-code).
+
+1. Gå till [Render Dashboard](https://dashboard.render.com/) → **New +** → **Blueprint**.
+2. Koppla GitHub-repot `Yoenia/yoenia-portfolio` och välj branch **`main`**.
+3. Render skapar webbtjänsten och bygger Docker-imagen. **`autoDeployTrigger: commit`** gör att varje push till `main` startar en ny deploy.
+
+Efter första deploy får du en URL som `https://yoenia-portfolio.onrender.com`. På gratisplan kan sidan ta några sekunder att starta efter inaktivitet.
+
+GitHub Pages (ovan) publicerar bara statiska filer. Render kör hela Spring Boot-appen med `/api/profile` och kontaktloggning.
+
 ## API
 
 | Metod | Sökväg | Beskrivning |

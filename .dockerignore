@@ -1,0 +1,13 @@
+target/
+.git/
+.github/
+.devcontainer/
+.vscode/
+.idea/
+*.iml
+node_modules/
+COMO-PROBAR.md
+KOR-PORTFOLIO.bat
+start-local.ps1
+mvnwDebug
+mvnwDebug.cmd

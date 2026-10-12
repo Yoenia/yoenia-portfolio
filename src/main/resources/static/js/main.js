@@ -209,7 +209,12 @@
             _replyto: email,
             _template: "table",
             _captcha: "false",
-            _next: "https://yoenia.github.io/yoenia-portfolio/?skickat=1#kontakt",
+            _next: (() => {
+              const url = new URL(window.location.href);
+              url.searchParams.set("skickat", "1");
+              url.hash = "kontakt";
+              return url.toString();
+            })(),
           }),
         });
         const body = await res.json().catch(() => ({}));
