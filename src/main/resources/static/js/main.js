@@ -139,6 +139,11 @@
 
     const button = form.querySelector("button[type=submit]");
 
+    if (new URLSearchParams(location.search).get("skickat") === "1") {
+      status.textContent = "Tack! Mejlet är skickat.";
+      status.classList.add("ok");
+    }
+
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
       status.textContent = "";
@@ -169,18 +174,20 @@
             _replyto: email,
             _template: "table",
             _captcha: "false",
+            _next: "https://yoenia.github.io/yoenia-portfolio/?skickat=1#kontakt",
           }),
         });
         const body = await res.json().catch(() => ({}));
         const note = String(body.message || "");
-        if (!res.ok) {
-          status.textContent = "Kunde inte skicka mejlet. Försök igen om en stund.";
+        const sent = String(body.success).toLowerCase() === "true";
+        if (/activat|confirm/i.test(note)) {
+          status.textContent =
+            "Ett mejl från FormSubmit har skickats till yoenia.malmebo@gmail.com. Öppna det (kolla även skräppost) och klicka på Activate Form. Bekräfta inte via deras exempelformulär.";
           status.classList.add("err");
           return;
         }
-        if (/activat|confirm/i.test(note)) {
-          status.textContent =
-            "Nästan klart. Öppna inkorgen för yoenia.malmebo@gmail.com och bekräfta formuläret en gång. Sedan kommer meddelanden fram.";
+        if (!res.ok || !sent) {
+          status.textContent = "Kunde inte skicka mejlet. Försök igen om en stund.";
           status.classList.add("err");
           return;
         }
