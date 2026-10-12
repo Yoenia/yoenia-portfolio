@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Yoenia Malmebo – verksamhetsledare och samordnare inom social omsorg. Portfölj och projekt med Java och Spring Boot.">
+  <meta name="author" content="Yoenia Malmebo">
+  <title>Yoenia Malmebo | yoenia.se</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Hoppa till innehåll</a>
+
+  <header class="site-header" id="top">
+    <div class="header-inner">
+      <a class="brand" href="/">yoenia<span class="brand-dot">.</span>se</a>
+      <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+        Meny
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Huvudmeny">
+        <a href="#om">Om mig</a>
+        <a href="#kompetens">Kompetens</a>
+        <a href="#erfarenhet">Erfarenhet</a>
+        <a href="#utbildning">Utbildning</a>
+        <a href="#projekt">Projekt</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow" id="hero-eyebrow">Laddar…</p>
+          <h1 id="hero-title">Yoenia Malmebo</h1>
+          <p class="hero-tagline" id="hero-tagline"></p>
+          <p class="hero-summary" id="hero-summary"></p>
+          <div class="hero-actions">
+            <a class="btn" href="#kontakt">Kontakta mig</a>
+            <a class="btn secondary" id="hero-linkedin" href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </div>
+        </div>
+        <aside class="hero-card" aria-label="Snabbinfo">
+          <div class="avatar" aria-hidden="true">YM</div>
+          <ul class="quick-facts" id="quick-facts"></ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="om" aria-labelledby="om-title">
+      <div class="section-head">
+        <h2 id="om-title">Om mig</h2>
+        <p class="muted">Professionell profil</p>
+      </div>
+      <div class="card">
+        <p id="about-text"></p>
+        <ul class="pill-list" id="strengths-list" aria-label="Styrkor"></ul>
+      </div>
+    </section>
+
+    <section class="section" id="kompetens" aria-labelledby="kompetens-title">
+      <div class="section-head">
+        <h2 id="kompetens-title">Kompetens</h2>
+        <p class="muted">Omsorg, ledning och webbutveckling</p>
+      </div>
+      <div class="skills-grid" id="skills-grid"></div>
+    </section>
+
+    <section class="section" id="erfarenhet" aria-labelledby="erfarenhet-title">
+      <div class="section-head">
+        <h2 id="erfarenhet-title">Erfarenhet</h2>
+        <p class="muted">Över 20 år inom vård och omsorg</p>
+      </div>
+      <ol class="timeline" id="experience-timeline"></ol>
+    </section>
+
+    <section class="section" id="utbildning" aria-labelledby="utbildning-title">
+      <div class="section-head">
+        <h2 id="utbildning-title">Utbildning</h2>
+        <p class="muted">Kontinuerlig kompetensutveckling</p>
+      </div>
+      <div class="cards-stack" id="education-list"></div>
+    </section>
+
+    <section class="section" id="projekt" aria-labelledby="projekt-title">
+      <div class="section-head">
+        <h2 id="projekt-title">Projekt</h2>
+        <p class="muted">Java, Spring Boot och webb</p>
+      </div>
+      <div class="projects-grid" id="projects-grid"></div>
+    </section>
+
+    <section class="section" id="kontakt" aria-labelledby="kontakt-title">
+      <div class="section-head">
+        <h2 id="kontakt-title">Kontakt</h2>
+        <p class="muted">Jag välkomnar ett samtal om samarbete eller nya möjligheter</p>
+      </div>
+      <div class="contact-grid">
+        <div class="card contact-info" id="contact-info"></div>
+        <form class="card contact-form" id="contact-form" novalidate>
+          <label>
+            Namn
+            <input type="text" name="name" required maxlength="120" autocomplete="name">
+          </label>
+          <label>
+            E-post
+            <input type="email" name="email" required maxlength="200" autocomplete="email">
+          </label>
+          <label>
+            Meddelande
+            <textarea name="message" required minlength="10" maxlength="4000" rows="5"></textarea>
+          </label>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+          <button type="submit" class="btn">Skicka meddelande</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Yoenia Malmebo · <a href="https://yoenia.se">yoenia.se</a></p>
+    <p class="muted footer-tech">Byggd med Java, Spring Boot, HTML, CSS och JavaScript.</p>
+  </footer>
+
+  <script src="/js/main.js" defer></script>
+</body>
+</html>
